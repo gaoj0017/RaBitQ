@@ -461,6 +461,6 @@ IVFRN<D, B>::~IVFRN(){
     if(fac != NULL)         delete [] fac;
     if(u  != NULL)          delete [] u;
     if(binary_code != NULL) std::free(binary_code);
-    if(pack_codes  != NULL) std::free(pack_codes);
+    // if(pack_codes  != NULL) std::free(pack_codes);
     if(centroid != NULL)    std::free(centroid);
 }
