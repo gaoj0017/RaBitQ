@@ -4,7 +4,7 @@
 
 # Datasets
 
-The tested datasets are available at https://www.cse.cuhk.edu.hk/systems/hash/gqr/datasets.html. 
+The tested datasets are available at https://www.cse.cuhk.edu.hk/systems/hash/gqr/datasets.html. The SIFT dataset which contains the groundtruth file can be downloaded from ftp://ftp.irisa.fr/local/texmex/corpus/sift.tar.gz. 
 
 ## Reproduction
 1. Download a dataset. The data format of ``.fvecs'' can be found in http://corpus-texmex.irisa.fr/.
