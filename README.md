@@ -47,8 +47,10 @@ We are open to address any questions regarding the RaBitQ project. Please feel f
     ```
 
 ---
+
 Please cite our paper using the following bibtex if it is used in your research.
-'''
+
+```
 @article{10.1145/3654970,
 author = {Gao, Jianyang and Long, Cheng},
 title = {RaBitQ: Quantizing High-Dimensional Vectors with a Theoretical Error Bound for Approximate Nearest Neighbor Search},
@@ -67,12 +69,13 @@ articleno = {167},
 numpages = {27},
 keywords = {Johnson-Lindenstrauss transformation, approximate nearest neighbor search, quantization}
 }
-'''
+```
 
 Please provide a reference of our paper if it helps in your system.
-'''
+
+```
 Jianyang Gao and Cheng Long. 2024. RaBitQ: Quantizing High-Dimensional Vectors with a Theoretical Error Bound for Approximate Nearest Neighbor Search. Proc. ACM Manag. Data 2, 3, Article 167 (June 2024), 27 pages. https://doi.org/10.1145/3654970
-'''
+```
 
 
 
