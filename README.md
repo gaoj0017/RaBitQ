@@ -1,8 +1,9 @@
 # [SIGMOD 2024] RaBitQ: Quantizing High-Dimensional Vectors with a Theoretical Error Bound for Approximate Nearest Neighbor Search
 
+*   We published a new blog - [Quantization in The Counterintuitive High-Dimensional Space](https://dev.to/gaoj0017/quantization-in-the-counterintuitive-high-dimensional-space-4feg) - to provide the key insights behind RaBitQ and its extension (corresponding to optimized approaches to binary quantization and scalar quantization respectively).
+ 
 ---
 ## News and Updates
-*   We published a new blog - [Quantization in The Counterintuitive High-Dimensional Space](https://dev.to/gaoj0017/quantization-in-the-counterintuitive-high-dimensional-space-4feg) - to provide the key insights behind RaBitQ and its extension. 
 *   Based on the questions we have received, we would like to provide the following updates and clarification regarding the RaBitQ project.
 *   Q1: Does RaBitQ supports compression rates other than 32x?
 *   A1: Yes. Around 2-3 months ago (Oct-2024), we released a new version of RaBitQ at https://github.com/VectorDB-NTU/Extended-RaBitQ. Based on the idea of RaBitQ, it further supports to quantize a vector with any arbitrary compression rates with asymptotically optimal accuracy. Based on our experiments, this algorithm brings especially significant improvement in the setting from 2-bit to 6-bit, which helps an algorithm to achieve high recall without reranking. 
