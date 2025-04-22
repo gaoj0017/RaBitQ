@@ -87,7 +87,7 @@ void Space<D, B>::transpose_bin(uint8_t *q, uint64_t *tq){
             uint32_t v1 = _mm256_movemask_epi8(v);
             v1 = reverseBits(v1);
             tq[(B_QUERY - j - 1) * (B / 64) + i / 64] |= ((uint64_t)v1 << ((i / 32 % 2 == 0) ? 32:0));
-            v = _mm256_add_epi32(v, v);
+            v = _mm256_slli_epi32(v, 1);
         }
         q += 32;
     }

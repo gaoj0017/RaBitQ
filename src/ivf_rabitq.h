@@ -263,9 +263,9 @@ ResultHeap IVFRN<D, B>::search(float* query, float* rd_query, uint32_t k, uint32
         
 #if defined(SCAN)        
         scan(KNNs, distK, k,\
-                quant_query, binary_code + start[c] * (B / 64), len[c], fac + start[c], \
+                quant_query, binary_code + 1ull * start[c] * (B / 64), len[c], fac + start[c], \
                 sqr_y, vl, width, sum_q,\
-                query, data + start[c] * D, id + start[c]);
+                query, data + 1ull * start[c] * D, id + start[c]);
 #elif defined(FAST_SCAN)
         fast_scan(KNNs, distK, k, \
                 LUT, packed_code + packed_start[c], len[c], fac + start[c], \
@@ -299,8 +299,8 @@ void IVFRN<D, B>::save(char * filename){
     output.write((char *) x0        , N * sizeof(float));
 
     output.write((char *) centroid, C * B * sizeof(float));
-    output.write((char *) data, N * D * sizeof(float));
-    output.write((char *) binary_code, N * B / 64 * sizeof(uint64_t));
+    output.write((char *) data, 1ull * N * D * sizeof(float));
+    output.write((char *) binary_code, 1ull * N * B / 64 * sizeof(uint64_t));
     
     output.close();
     std::cerr << "Saved!" << std::endl;
@@ -356,8 +356,8 @@ void IVFRN<D, B>::load(char * filename){
     input.read((char *) x0         , N * sizeof(float));
     
     input.read((char *) centroid   , C * B * sizeof(float));
-    input.read((char *) data, N * D * sizeof(float));
-    input.read((char *) binary_code, N * B / 64 * sizeof(uint64_t));
+    input.read((char *) data, 1ull * N * D * sizeof(float));
+    input.read((char *) binary_code, 1ull * N * B / 64 * sizeof(uint64_t));
 
 #if defined(FAST_SCAN)
     packed_start = new uint32_t [C];
@@ -368,7 +368,7 @@ void IVFRN<D, B>::load(char * filename){
     }
     packed_code = static_cast<uint8_t*>(aligned_alloc(32, cur * sizeof(uint8_t)));
     for(int i=0;i<C;i++){
-        pack_codes<B>(binary_code + start[i] * (B / 64), len[i], packed_code + packed_start[i]);
+        pack_codes<B>(binary_code + 1ull * start[i] * (B / 64), len[i], packed_code + 1ull * packed_start[i]);
     }
 #else 
     packed_start = NULL;
@@ -434,8 +434,8 @@ IVFRN<D, B>::IVFRN(const Matrix<float> &X, const Matrix<float> &_centroids, cons
     }
 
     centroid        = new float [C * B];
-    data            = new float [N * D];
-    binary_code     = new uint64_t [N * B / 64];
+    data            = new float [1ull * N * D];
+    binary_code     = new uint64_t [1ull * N * B / 64];
 
     std::memcpy(centroid, _centroids.data, C * B * sizeof(float));
     float * data_ptr = data;
@@ -443,8 +443,8 @@ IVFRN<D, B>::IVFRN(const Matrix<float> &X, const Matrix<float> &_centroids, cons
 
     for(int i=0;i<N;i++){
         int x = id[i];
-        std::memcpy(data_ptr, X.data + x * D, D * sizeof(float));
-        std::memcpy(binary_code_ptr, binary.data + x * (B / 64), (B / 64) * sizeof(uint64_t));
+        std::memcpy(data_ptr, X.data + 1ull * x * D, D * sizeof(float));
+        std::memcpy(binary_code_ptr, binary.data + 1ull * x * (B / 64), (B / 64) * sizeof(uint64_t));
         data_ptr += D;
         binary_code_ptr += B / 64;
     }
