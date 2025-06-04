@@ -4,18 +4,8 @@
  
 ---
 ## News and Updates
-*   Based on the questions we have received, we would like to provide the following updates and clarification regarding the RaBitQ project.
-*   Q1: Does RaBitQ supports compression rates other than 32x?
-*   A1: Yes. Around 2-3 months ago (Oct-2024), we released a new version of RaBitQ at https://github.com/VectorDB-NTU/Extended-RaBitQ. Based on the idea of RaBitQ, it further supports to quantize a vector with any arbitrary compression rates with asymptotically optimal accuracy. Based on our experiments, this algorithm brings especially significant improvement in the setting from 2-bit to 6-bit, which helps an algorithm to achieve high recall without reranking. 
-    *   Intuitively, the algorithm achieves the promising performance because it "constructs" the codebook for every vector individually. Specifically, our method first considers a codebook formed by $B$-bit uint vectors; and then transform the codebook, i.e., translating and rescaling, on a per-vector basis. By trying different parameters of transforming, the algorithm can find a vector in the transformed codebook, that best approximate a data vector.
-    *   Geometrically, the operation is equivalent to (1) normalizing both data vectors and the vectors in codebooks onto high-dim unit spheres and; (2)find every data vector's best match in the codebook after the normalization operation.
-    *   Theoretically, we prove that based on the technology above, our algorithm provides an asymptotically optimal error bound regarding the trade-off between the error and the space consumption. To our knowledge, our algorithm is also the first practical algorithm that achieves the optimality. 
 
-*   Q2: Can RaBitQ be combined with graphs? 
-*   A2: Yes. We released the code at https://github.com/VectorDB-NTU/SymphonyQG. In this project, we follow the framework proposed by NGT-QG (https://github.com/yahoojapan/NGT) and combines RaBitQ and graph-based indices (NSG) in a more symphonious way. This repo is heavily optimized and achieves 3.5x-17x acceleration at 95% recall compared with the classical HNSWlib across datasets. More details about the project can be found in the paper https://arxiv.org/abs/2411.12229 that has been recently accepted by SIGMOD'25. 
-
-*   Q3: Will Python interfaces be provided? 
-*   A3: We planned to provide a simple Python interface for the basic version of RaBitQ, but later the projects related to RaBitQ become larger than our initial expectation. Currently, only https://github.com/VectorDB-NTU/SymphonyQG provides a Python interface. We are working towards a library that integrates the features regarding RaBitQ. In the library, we shall provide Python bindings. More features related to RaBitQ is upcoming.
+A library with more practical implementation techniques about RaBitQ is released at the [RaBitQ-Library](https://github.com/VectorDB-NTU/RaBitQ-Library).
 
 We are open to address any questions regarding the RaBitQ project. Please feel free to drop us an email at *jianyang.gao [at] ntu.edu.sg* and *c.long [at] ntu.edu.sg*.
 
