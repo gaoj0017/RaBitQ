@@ -1,15 +1,16 @@
 # [SIGMOD 2024] RaBitQ: Quantizing High-Dimensional Vectors with a Theoretical Error Bound for Approximate Nearest Neighbor Search
 
-*   We published a new blog - [Quantization in The Counterintuitive High-Dimensional Space](https://dev.to/gaoj0017/quantization-in-the-counterintuitive-high-dimensional-space-4feg) - to provide the key insights behind RaBitQ and its extension (corresponding to optimized approaches to binary quantization and scalar quantization respectively).
- 
----
 ## News and Updates
 
-A library with more practical implementation techniques about RaBitQ is released at the [RaBitQ-Library](https://github.com/VectorDB-NTU/RaBitQ-Library).
+* **A library with more practical implementation techniques about RaBitQ is released at the [RaBitQ-Library](https://github.com/VectorDB-NTU/RaBitQ-Library).**
+
+
+*   A new blog - [Quantization in The Counterintuitive High-Dimensional Space](https://dev.to/gaoj0017/quantization-in-the-counterintuitive-high-dimensional-space-4feg) - to provide the key insights behind RaBitQ and its extension (corresponding to optimized approaches to binary quantization and scalar quantization respectively).
+
+---
 
 We are open to address any questions regarding the RaBitQ project. Please feel free to drop us an email at *jianyang.gao [at] ntu.edu.sg* and *c.long [at] ntu.edu.sg*.
 
----
 ## Organization
 *   The index phase of RaBitQ: `./data/rabitq.py`.
 *   The query phase of RaBitQ: 
