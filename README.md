@@ -1,6 +1,7 @@
 # [SIGMOD 2024] RaBitQ: Quantizing High-Dimensional Vectors with a Theoretical Error Bound for Approximate Nearest Neighbor Search
 
 ## News and Updates
+* **The repo has been archived. Please refer to the [RaBitQ-Library](https://github.com/VectorDB-NTU/RaBitQ-Library) for further development.**
 
 * **A library with more practical implementation techniques about RaBitQ is released at the [RaBitQ-Library](https://github.com/VectorDB-NTU/RaBitQ-Library).**
 
