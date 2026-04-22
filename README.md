@@ -10,7 +10,7 @@
 
 ---
 
-We are open to address any questions regarding the RaBitQ project. Please feel free to drop us an email at *jianyang.gao [at] ntu.edu.sg* and *c.long [at] ntu.edu.sg*.
+We are open to address any questions regarding the RaBitQ project. Please feel free to drop us an email at *GAOJ0017 [at] e.ntu.edu.sg* and *c.long [at] ntu.edu.sg*.
 
 ## Organization
 *   The index phase of RaBitQ: `./data/rabitq.py`.
